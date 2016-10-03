@@ -1,0 +1,14 @@
+{
+  "name": "tables-client",
+  "version": "0.0.1",
+  "description": "Javascript Library for handling HTML tables with a Laravel Eloquent backend.",
+  "main": "build/js/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chris Beaver",
+  "license": "ISC",
+  "devDependencies": {
+    "rollup": "^0.36.1"
+  }
+}
