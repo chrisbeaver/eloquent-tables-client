@@ -10,3 +10,17 @@ export function buildPaginator()
     let totalPages = total_count.value / config.tableRows;
     alert(totalPages);
 }
+
+export class Paginator {
+    constructor(total) {
+        this.total = total;
+    }
+  
+    get pages() {
+        return this.calcPages();
+    }
+
+    calcPages() {
+        return this.total / config.tableRows;
+    }
+}

@@ -1,5 +1,5 @@
 import { tables, total_count } from '../globals';
-import { buildPaginator } from './paginator';
+import { buildPaginator, Paginator } from './paginator';
 /**
  * AJAX Listener to build table with data returned 
  * from server.
@@ -26,5 +26,7 @@ export function populateTable(payload)
     });
     // console.log(paginator);
     total_count.set(payload.count);
-    buildPaginator(); 
+    buildPaginator();
+    let paginatorObject = new Paginator(total_count.value);
+    console.log(paginatorObject);
 }

@@ -10,7 +10,7 @@ export function ajaxRequest()
     r.open('POST', tables[0].getAttribute('data-target'), true);
     r.setRequestHeader('X-CSRF-TOKEN', '{{ csrf_token() }}');
     r.setRequestHeader('take', '10');
-    r.setRequestHeader('skip', '5');
+    r.setRequestHeader('skip', '20');
     r.setRequestHeader('search', 'Wiza');
     r.addEventListener('load', ajaxListener);
     r.onreadystatechange = function () {
