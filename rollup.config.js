@@ -4,4 +4,5 @@ export default {
   format: 'iife',
   moduleName: 'eloquentTables',
   sourceMap: 'inline',
+  // exports: 'none',
 };

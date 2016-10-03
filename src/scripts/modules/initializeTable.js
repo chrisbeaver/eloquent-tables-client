@@ -1,3 +1,4 @@
+import {tables, headers, rows, paginator, total_count} from "../globals.js";
 /**
  * Construct basic framework for creating a table.
  */
@@ -10,7 +11,7 @@ export function initializeTable()
     document.body.insertBefore(wrapper, table);
     wrapper.appendChild(table);
 
-    paginator = document.createElement("div");
+    // paginator = document.createElement("div");
     paginator.className = "paginator";
     wrapper.appendChild(paginator);
 }

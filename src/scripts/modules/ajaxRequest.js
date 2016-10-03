@@ -1,3 +1,4 @@
+import {tables, headers, rows, paginator, total_count} from "../globals.js";
 import { populateTable } from './populateTable.js'
 /**
  * AJAX Request to server to get Table data.
@@ -24,6 +25,8 @@ export function ajaxRequest()
  */
 export function ajaxListener()
 {
-    rows = JSON.parse(this.responseText);
-    populateTable(rows, paginator);
+    // console.log(JSON.parse(this.responseText));
+    rows.set(JSON.parse(this.responseText));
+    console.log(rows.collection);
+    populateTable(rows.collection);
 }
