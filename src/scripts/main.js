@@ -1,6 +1,5 @@
-import { tables } from './globals.js';
-import { initializeTable } from "./modules/initializeTable";
-import { ajaxRequest, ajaxListener } from "./modules/ajaxRequest";
+import { initializeTable } from './modules/initializeTable';
+import { ajaxRequest } from './modules/ajaxRequest';
 
 initializeTable();
 ajaxRequest();

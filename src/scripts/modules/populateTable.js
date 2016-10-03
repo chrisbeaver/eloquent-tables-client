@@ -1,5 +1,5 @@
-import {tables, headers, rows, paginator, total_count} from "../globals.js";
-import { buildPaginator } from './paginator.js';
+import { tables, total_count } from '../globals';
+import { buildPaginator } from './paginator';
 /**
  * AJAX Listener to build table with data returned 
  * from server.
@@ -8,7 +8,7 @@ import { buildPaginator } from './paginator.js';
  */
 export function populateTable(payload)
 {
-    console.log(tables);
+    // console.log(tables);
     payload.data.forEach(function(data) {
         
         var row = tables[0].getElementsByTagName('tbody')[0].insertRow(-1);
@@ -24,7 +24,7 @@ export function populateTable(payload)
         cell3.innerHTML = data.name;
         cell4.innerHTML = data.price;
     });
-    console.log(paginator);
+    // console.log(paginator);
     total_count.set(payload.count);
     buildPaginator(); 
 }
