@@ -1,4 +1,4 @@
-import { Paginator } from './paginator';
+// import { Paginator } from './paginator';
 import { Header } from './header';
 import { ajaxListener } from './ajaxRequest';
 
@@ -7,7 +7,6 @@ export class Table {
         this.table = elem;  // HTML Table Element
         this.parent = this.initialize();
         this.header = this._loadHeader();
-        console.log(this.header.columns);
     }
   
     load() {

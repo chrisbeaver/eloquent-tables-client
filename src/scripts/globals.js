@@ -6,8 +6,6 @@ export let headers = [].slice
         return header.innerHTML;
     });
 
-// export let paginator = document.createElement('div');
-
 export let total_count = { value: 0,
     set: function(value) {
 		this.value = value;
