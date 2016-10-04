@@ -1,4 +1,4 @@
-import { paginator, total_count, config } from '../globals';
+import { total_count, config } from '../globals';
 /**
  * Fired on AJAX response to construct paginated results.
  *
@@ -6,13 +6,11 @@ import { paginator, total_count, config } from '../globals';
 export function buildPaginator()
 {
     // console.log('Count: ' + total_count);
-    paginator.innerHTML = total_count.value;
-    let totalPages = total_count.value / config.tableRows;
-    alert(totalPages);
 }
 
 export class Paginator {
-    constructor(total) {
+    constructor(elem, total) {
+        this.elem = elem;
         this.total = total;
     }
   
@@ -22,5 +20,14 @@ export class Paginator {
 
     calcPages() {
         return this.total / config.tableRows;
+    }
+
+    buildHTML() {
+        
+        let node = document.createElement('div');
+        node.className = 'paginator';
+        // wrapper.appendChild(node);
+        node.innerHTML = total_count.value;
+        this.elem.appendChild(node);
     }
 }

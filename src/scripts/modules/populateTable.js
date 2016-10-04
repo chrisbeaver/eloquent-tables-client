@@ -1,5 +1,5 @@
 import { tables, total_count } from '../globals';
-import { buildPaginator, Paginator } from './paginator';
+import { Paginator } from './paginator';
 /**
  * AJAX Listener to build table with data returned 
  * from server.
@@ -9,9 +9,10 @@ import { buildPaginator, Paginator } from './paginator';
 export function populateTable(payload)
 {
     // console.log(tables);
+    const elem = tables[0].getElementsByTagName('tbody')[0];
     payload.data.forEach(function(data) {
         
-        var row = tables[0].getElementsByTagName('tbody')[0].insertRow(-1);
+        var row = elem.insertRow(-1);
         // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
@@ -26,7 +27,6 @@ export function populateTable(payload)
     });
     // console.log(paginator);
     total_count.set(payload.count);
-    buildPaginator();
-    let paginatorObject = new Paginator(total_count.value);
-    console.log(paginatorObject);
+    let paginator = new Paginator(elem, total_count.value);
+    paginator.buildHTML();
 }
