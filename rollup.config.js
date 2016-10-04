@@ -17,5 +17,5 @@ export default {
 	      	]
 	    }),
   	],
-  	// exports: 'none',
-};
+  	exports: 'default',
+  };

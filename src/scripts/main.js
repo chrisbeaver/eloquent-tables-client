@@ -8,3 +8,4 @@ let elem = tables[0];
 let table = new Table(elem);
 table.load();
 // ajaxRequest();
+export default tables;
