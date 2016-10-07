@@ -1,4 +1,4 @@
-import { tables, rows } from '../globals';
+// import { tables, rows } from '../globals';
 import { populateTable } from './populateTable';
 /**
  * AJAX Request to server to get Table data.
@@ -25,6 +25,8 @@ export function ajaxRequest()
  */
 export function ajaxListener()
 {
-    rows.set(JSON.parse(this.responseText));
+    let response = JSON.parse(this.responseText);
+    
+    rows.set(response);
     populateTable(rows.collection);
 }

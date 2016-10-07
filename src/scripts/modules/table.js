@@ -2,12 +2,13 @@
 import { Header } from './header';
 import RemoteData from './ajax';
 
-export class Table {
+export default class {
     constructor(elem) {
         this.table = elem;  // HTML Table Element
         this.parent = this.initialize();
         this.header = this._loadHeader();
-        this._loadData();
+        this.data = RemoteData;
+        this.data.requestData();
     }
   
     // load() {
@@ -40,7 +41,7 @@ export class Table {
         return new Header(this.table.tHead);
     }
 
-    _loadData() {
-        this.data = new RemoteData;
-    }
+    // set response(response) {
+    //     return this.response = response;
+    // }
 }
